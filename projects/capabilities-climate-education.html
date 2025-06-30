@@ -1,1 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Laura Knight</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Futura', 'Montserrat', 'Avenir Next', 'Avenir', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 50px;
+        }
+
+        .back-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #000;
+        }
+
+        .back-link::before {
+            content: "← ";
+            margin-right: 5px;
+        }
+
+        /* Header */
+        .project-header {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project-title {
+            font-size: 2.2rem;
+            font-weight: 300;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .project-meta {
+            color: #666;
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f8f8f8;
+            color: #666;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border-radius: 15px;
+            border: 1px solid #eee;
+        }
+
+        .tag.theme { background: #e8f4f8; border-color: #d1e7ed; }
+        .tag.method { background: #f0f8e8; border-color: #e1edd1; }
+        .tag.status { background: #fdf4e8; border-color: #f5e7d1; }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .content-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section li {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #000;
+            text-decoration: underline;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        /* Quote styles */
+        .quote {
+            border-left: 3px solid #eee;
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Image styles */
+        .project-image {
+            width: 100%;
+            height: auto;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* Related links */
+        .related-links {
+            background: #f8f8f8;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .related-links h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .related-links ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .related-links li {
+            margin-bottom: 8px;
+        }
+
+        .related-links a {
+            color: #000;
+            text-decoration: underline;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .project-title {
+                font-size: 1.8rem;
+            }
+            
+            .content-section p,
+            .content-section li {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <a href="../index.html" class="back-link">Back to all projects</a>
+        </nav>
+
+        <header class="project-header">
+            <h1 class="project-title">How might a capabilities approach enhance Climate Change Education in UKHE?</h1>
+            
+            <div class="project-meta">
+                Upcoming Paper | 2025
+            </div>
+            
+            <div class="project-tags">
+                <span class="tag theme">Climate Change</span>
+                <span class="tag theme">Curriculum Design</span>
+                <span class="tag method">Papers</span>
+                <span class="tag status">Upcoming</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="content-section">
+                <h2 class="section-title">Abstract</h2>
+                <p>This research examines how Amartya Sen's capabilities approach might provide a transformative framework for reimagining climate change education in UK Higher Education. Rather than focusing solely on knowledge transmission, the capabilities approach emphasizes developing students' substantive freedoms to engage meaningfully with climate challenges.</p>
+                
+                <p>The study explores how this philosophical framework could reshape pedagogical approaches, assessment strategies, and institutional structures to foster more empowering and effective climate education.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Research Questions</h2>
+                <ul>
+                    <li>How can the capabilities approach inform curriculum design for climate education?</li>
+                    <li>What institutional barriers prevent students from developing climate-related capabilities?</li>
+                    <li>How might assessment practices better reflect capabilities development rather than content mastery?</li>
+                    <li>What role does agency play in effective climate education?</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Methodology</h2>
+                <p>This qualitative study employs a mixed-methods approach including:</p>
+                <ul>
+                    <li>Literature review of capabilities approaches in education</li>
+                    <li>Case study analysis of existing climate education programs</li>
+                    <li>Stakeholder interviews with educators and students</li>
+                    <li>Participatory workshops exploring capability-centered pedagogy</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Key Insights</h2>
+                <div class="quote">
+                    "Education should not merely inform students about climate change, but should cultivate their capabilities to meaningfully participate in climate solutions."
+                </div>
+                
+                <p>Early findings suggest that traditional knowledge-focused approaches to climate education may inadvertently disempower students by emphasizing problems without fostering agency. The capabilities approach offers a framework for education that develops both understanding and empowerment.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Implications for Practice</h2>
+                <p>This research has potential implications for:</p>
+                <ul>
+                    <li>Curriculum designers developing climate education programs</li>
+                    <li>Institutional leaders seeking to embed sustainability across disciplines</li>
+                    <li>Educators looking for more empowering pedagogical approaches</li>
+                    <li>Students advocating for more meaningful climate education</li>
+                </ul>
+            </section>
+
+            <div class="related-links">
+                <h3>Related Resources</h3>
+                <ul>
+                    <li><a href="https://example.com/capabilities-framework" target="_blank">Sen's Capabilities Approach: Overview</a></li>
+                    <li><a href="../projects/niti-nyaya-climate.html">Niti and Nyaya in Climate Literacy</a></li>
+                    <li><a href="https://example.com/climate-education-review" target="_blank">Current State of Climate Education in UKHE</a></li>
+                </ul>
+            </div>
+
+            <section class="content-section">
+                <h2 class="section-title">Status & Timeline</h2>
+                <p><strong>Current Status:</strong> Data collection phase</p>
+                <p><strong>Expected Completion:</strong> Summer 2025</p>
+                <p><strong>Intended Venue:</strong> International Journal of Sustainability in Higher Education</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
