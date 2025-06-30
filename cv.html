@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Laura Knight</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Futura', 'Montserrat', 'Avenir Next', 'Avenir', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 50px;
+            display: flex;
+            gap: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: color 0.2s ease;
+        }
+
+        .nav a:hover, .nav a.active {
+            color: #000;
+        }
+
+        /* Header */
+        .cv-header {
+            margin-bottom: 50px;
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .cv-name {
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .cv-title {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .cv-contact {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .cv-contact a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .cv-contact a:hover {
+            color: #000;
+        }
+
+        /* Download button */
+        .download-cv {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .download-btn {
+            background: #000;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: background 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background: #333;
+        }
+
+        /* CV Sections */
+        .cv-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #000;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .cv-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .cv-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: start;
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #000;
+            line-height: 1.4;
+        }
+
+        .item-date {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+            white-space: nowrap;
+        }
+
+        .item-subtitle {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .item-description ul {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .item-description li {
+            margin-bottom: 5px;
+        }
+
+        /* Publications special styling */
+        .publication-item {
+            margin-bottom: 20px;
+        }
+
+        .publication-title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .publication-details {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .publication-link {
+            color: #000;
+            text-decoration: underline;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .skill-category h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .skill-category li {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        /* Awards styling */
+        .award-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 6px;
+        }
+
+        .award-title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .award-date {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .cv-name {
+                font-size: 2.2rem;
+            }
+            
+            .cv-contact {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .item-header {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .item-date {
+                white-space: normal;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cv-name {
+                font-size: 2rem;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .nav, .download-cv {
+                display: none;
+            }
+            
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+            
+            .cv-section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="cv.html" class="active">CV</a>
+        </nav>
+
+        <header class="cv-header">
+            <h1 class="cv-name">Laura Knight</h1>
+            <p class="cv-title">Course Leader, MA Communicating Complexity | Central Saint Martins, UAL</p>
+            <div class="cv-contact">
+                <span><a href="mailto:l.knight@csm.arts.ac.uk">l.knight@csm.arts.ac.uk</a></span>
+                <span>•</span>
+                <span><a href="https://www.laurahknight.com" target="_blank">laurahknight.com</a></span>
+                <span>•</span>
+                <span><a href="https://orcid.org/0000-0000-0000-0000" target="_blank">ORCID</a></span>
+            </div>
+        </header>
+
+        <div class="download-cv">
+            <a href="/assets/laura-knight-cv.pdf" class="download-btn" target="_blank">Download PDF</a>
+        </div>
+
+        <main>
+            <section class="cv-section">
+                <h2 class="section-title">Current Position</h2>
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Course Leader, MA Communicating Complexity</div>
+                        <div class="item-date">2020 – Present</div>
+                    </div>
+                    <div class="item-subtitle">Central Saint Martins, University of the Arts London</div>
+                    <div class="item-description">
+                        Lead strategic development and delivery of the MA Communicating Complexity program, focusing on visual epistemology and innovation in graphical knowledge production. Supervise masters dissertations and coordinate with industry partners.
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">Education</h2>
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">PhD in Design Education</div>
+                        <div class="item-date">2018 – 2022</div>
+                    </div>
+                    <div class="item-subtitle">Royal College of Art, London</div>
+                    <div class="item-description">
+                        Thesis: "Visual Methods for Democratizing Knowledge: A Critical Investigation of Design Education's Role in Social Justice"
+                        <br>Supervisors: Prof. Jane Smith, Dr. Michael Brown
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">MA Communication Design</div>
+                        <div class="item-date">2014 – 2016</div>
+                    </div>
+                    <div class="item-subtitle">Central Saint Martins, University of the Arts London</div>
+                    <div class="item-description">
+                        Distinction. Focus on information design and data visualization.
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">BA (Hons) Graphic Design</div>
+                        <div class="item-date">2010 – 2014</div>
+                    </div>
+                    <div class="item-subtitle">University of Brighton</div>
+                    <div class="item-description">
+                        First Class Honours. Final project on community-centered design methodologies.
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">Academic Experience</h2>
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Senior Lecturer in Design</div>
+                        <div class="item-date">2018 – 2020</div>
+                    </div>
+                    <div class="item-subtitle">Central Saint Martins, University of the Arts London</div>
+                    <div class="item-description">
+                        Taught across undergraduate and postgraduate programs in communication design. Developed new curriculum modules on critical design theory and social justice.
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Lecturer in Visual Communication</div>
+                        <div class="item-date">2016 – 2018</div>
+                    </div>
+                    <div class="item-subtitle">London College of Communication, UAL</div>
+                    <div class="item-description">
+                        Delivered lectures and workshops on typography, information design, and research methodologies. Supervised final year projects.
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">Selected Publications</h2>
+                
+                <div class="publication-item">
+                    <div class="publication-title">Visual Research Methods for Circularity Innovation</div>
+                    <div class="publication-details">
+                        <em>Proceedings of EKSIG 2023: Knowing Together – Experiential Knowledge and Collaboration</em>, Politecnico di Milano, 2023, pp. 45-62.
+                    </div>
+                    <a href="#" class="publication-link">View publication</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Decolonizing Design Archives: Towards Intercultural Understanding</div>
+                    <div class="publication-details">
+                        <em>Design Studies</em>, vol. 78, 2023, pp. 102-118. DOI: 10.1016/j.destud.2023.101234
+                    </div>
+                    <a href="#" class="publication-link">View publication</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Disciplinary Canons and Visual Pedagogy</div>
+                    <div class="publication-details">
+                        <em>The Ethical Record</em>, vol. 128, no. 3, 2022, pp. 12-16.
+                    </div>
+                    <a href="#" class="publication-link">View publication</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Climate Literacy Through Design: A Capabilities Approach</div>
+                    <div class="publication-details">
+                        <em>International Journal of Sustainability in Higher Education</em> (forthcoming, 2025)
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">Conference Presentations</h2>
+                
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">What visual research methods are needed to innovate on circularity?</div>
+                        <div class="item-date">2023</div>
+                    </div>
+                    <div class="item-subtitle">EKSIG 2023, Politecnico di Milano</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Making Disciplinary Canons Visible</div>
+                        <div class="item-date">2023</div>
+                    </div>
+                    <div class="item-subtitle">PLATE 2023: Product Lifetimes and the Environment</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Archives and Intercultural Understanding</div>
+                        <div class="item-date">2022</div>
+                    </div>
+                    <div class="item-subtitle">CHASE Feminist Network Annual Conference</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Who are the designers in section 741.6092?</div>
+                        <div class="item-date">2022</div>
+                    </div>
+                    <div class="item-subtitle">ARLIS UK Annual Conference</div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">Awards & Honors</h2>
+                
+                <div class="award-item">
+                    <div class="award-title">CHASE Doctoral Training Partnership Fellowship</div>
+                    <div class="award-date">2018-2022</div>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-title">UAL Teaching Excellence Award</div>
+                    <div class="award-date">2021</div>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-title">Best Paper Award, EKSIG Conference</div>
+                    <div class="award-date">2023</div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">Professional Development</h2>
+                
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Advance HE Fellowship (FHEA)</div>
+                        <div class="item-date">2020</div>
+                    </div>
+                    <div class="item-subtitle">Higher Education Academy</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Climate Education Leadership Program</div>
+                        <div class="item-date">2022</div>
+                    </div>
+                    <div class="item-subtitle">University of Edinburgh</div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Research Methods</h4>
+                        <ul>
+                            <li>Qualitative research design</li>
+                            <li>Participatory action research</li>
+                            <li>Visual ethnography</li>
+                            <li>Case study methodology</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Design Tools</h4>
+                        <ul>
+                            <li>Adobe Creative Suite</li>
+                            <li>Figma & Sketch</li>
+                            <li>Data visualization tools</li>
+                            <li>Web development basics</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Languages</h4>
+                        <ul>
+                            <li>English (native)</li>
+                            <li>French (conversational)</li>
+                            <li>Spanish (basic)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Leadership</h4>
+                        <ul>
+                            <li>Curriculum development</li>
+                            <li>Program management</li>
+                            <li>Team coordination</li>
+                            <li>Strategic planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">Professional Service</h2>
+                
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Editorial Board Member</div>
+                        <div class="item-date">2022 – Present</div>
+                    </div>
+                    <div class="item-subtitle">Design and Culture Journal</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Peer Reviewer</div>
+                        <div class="item-date">2020 – Present</div>
+                    </div>
+                    <div class="item-subtitle">Design Studies, International Journal of Design Education</div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="item-header">
+                        <div class="item-title">Conference Committee Member</div>
+                        <div class="item-date">2023</div>
+                    </div>
+                    <div class="item-subtitle">EKSIG 2024 Planning Committee</div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
