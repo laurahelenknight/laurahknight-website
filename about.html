@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Laura Knight</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Futura', 'Montserrat', 'Avenir Next', 'Avenir', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 50px;
+            display: flex;
+            gap: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: color 0.2s ease;
+        }
+
+        .nav a:hover, .nav a.active {
+            color: #000;
+        }
+
+        /* Header */
+        .page-header {
+            margin-bottom: 50px;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #000;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .content-section ul {
+            margin-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .content-section li {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #000;
+            text-decoration: underline;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        /* Profile image */
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 50px;
+        }
+
+        .profile-text {
+            /* Text content */
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 200px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Quote styles */
+        .highlight-quote {
+            background: #f8f8f8;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.6;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Contact info */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: #f8f8f8;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .contact-item h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .contact-item p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Affiliations */
+        .affiliations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .affiliation {
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .affiliation h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .affiliation p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .profile-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .profile-image {
+                order: -1;
+                height: 150px;
+                margin: 0 auto;
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html">Projects</a>
+            <a href="about.html" class="active">About</a>
+            <a href="cv.html">CV</a>
+        </nav>
+
+        <header class="page-header">
+            <h1 class="page-title">About</h1>
+            <p class="page-subtitle">Exploring visual epistemology and innovation in graphical knowledge production</p>
+        </header>
+
+        <main>
+            <section class="profile-section">
+                <div class="profile-text">
+                    <p>I am Course Leader for the MA Communicating Complexity at Central Saint Martins, University of the Arts London. My research sits at the intersection of design education, visual epistemology, and social justice, with a particular focus on how visual methods can make complex knowledge more accessible and actionable.</p>
+                    
+                    <p>My work explores fundamental questions about how we create, share, and democratize knowledge through design. I'm particularly interested in the political dimensions of curriculum design and how educational institutions can better serve diverse communities and perspectives.</p>
+                </div>
+                <div class="profile-image">
+                    [Your photo here]
+                </div>
+            </section>
+
+            <div class="highlight-quote">
+                "I believe that design education has the potential to be transformative—not just in developing technical skills, but in fostering critical thinking about whose knowledge is valued and how visual communication can serve social justice."
+            </div>
+
+            <section class="content-section">
+                <h2 class="section-title">Research Interests</h2>
+                <ul>
+                    <li><strong>Visual Epistemology:</strong> How visual methods create and communicate knowledge</li>
+                    <li><strong>Climate Education:</strong> Developing capabilities-based approaches to environmental literacy</li>
+                    <li><strong>Curriculum Design:</strong> Creating inclusive and decolonized design education</li>
+                    <li><strong>Institutional Change:</strong> Transforming educational institutions for greater justice and sustainability</li>
+                    <li><strong>Archive Studies:</strong> Engaging with archives in ways that promote intercultural understanding</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Teaching Philosophy</h2>
+                <p>My pedagogical approach centers on critical inquiry and collaborative knowledge-making. I believe students learn best when they're not just consumers of knowledge, but active participants in creating it. This means fostering spaces where questioning is valued as much as answering, and where diverse perspectives are seen as essential to understanding complex problems.</p>
+                
+                <p>In the MA Communicating Complexity program, we work with students to develop both technical skills and critical frameworks for understanding the social and political implications of their design work. The goal is to graduate designers who are not only skilled practitioners, but also thoughtful contributors to social change.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Current Projects</h2>
+                <p>My current research explores how educational institutions might better prepare students to engage with climate change, not just as an abstract problem to be understood, but as a complex challenge requiring creative, collaborative, and justice-oriented responses.</p>
+                
+                <p>I'm also investigating how design educators might work with archives and cultural institutions to create more inclusive representations of design history—questioning who has been centered in traditional narratives and how we might tell richer, more complex stories about design's past and future.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Affiliations</h2>
+                <div class="affiliations">
+                    <div class="affiliation">
+                        <h4>Central Saint Martins</h4>
+                        <p>University of the Arts London</p>
+                    </div>
+                    <div class="affiliation">
+                        <h4>CHASE Doctoral Training Partnership</h4>
+                        <p>Consortium for the Humanities and the Arts South-East England</p>
+                    </div>
+                    <div class="affiliation">
+                        <h4>EKSIG</h4>
+                        <p>Experiential Knowledge Special Interest Group</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:l.knight@csm.arts.ac.uk">l.knight@csm.arts.ac.uk</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Office</h3>
+                        <p>Central Saint Martins<br>
+                        University of the Arts London<br>
+                        Granary Square, London N1C 4AA</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>ORCID</h3>
+                        <p><a href="https://orcid.org/0000-0000-0000-0000" target="_blank">0000-0000-0000-0000</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>ResearchGate</h3>
+                        <p><a href="https://www.researchgate.net/profile/Laura-Knight" target="_blank">Laura Knight</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
